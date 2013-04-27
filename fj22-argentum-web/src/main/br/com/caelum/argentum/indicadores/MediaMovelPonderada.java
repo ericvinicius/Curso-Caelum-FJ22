@@ -28,6 +28,6 @@ public class MediaMovelPonderada implements Indicador {
 	}
 	
 	public String toString(){
-		return "MMS de Fechamento";
+		return "MMP-" + this.outroIndicador.toString();
 	}
 }
