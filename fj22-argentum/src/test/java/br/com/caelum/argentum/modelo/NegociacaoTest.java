@@ -68,9 +68,9 @@ public class NegociacaoTest {
 				negocoacoes2, negocoacoes3, negocoacoes4, negocoacoes5,
 				negocoacoes6, negocoacoes7, negocoacoes8);
 	
-		CandlestickFactory fabrica = new CandlestickFactory();
+		CandleFactory fabrica = new CandleFactory();
 		
-		List<Candlestick> candles = fabrica.constroiCandles(negociacoes);
+		List<Candle> candles = fabrica.constroiCandles(negociacoes);
 		
 		Assert.assertEquals(3, candles.size());
 		Assert.assertEquals(40.5, candles.get(0).getAbertura(), 0.00001);

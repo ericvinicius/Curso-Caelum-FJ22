@@ -13,16 +13,8 @@
 
 	<p:panel header="Negociacoes" footer="Argentum Web">
 
-		<h:form>
-			<p:commandButton id="showButton" value="Hotario Atual">
-				<f:setPropertyActionListener value="#{true}"
-					target="#{requestScope.renderCampNou}" />
-			</p:commandButton>
-
-			<p:outputPanel id="panel" autoUpdate="false">
-				<p:clock rendered="#{requestScope.renderCampNou}" />
-			</p:outputPanel>
-		</h:form>
+		<p:lineChart value="#{argentumBean.modeloGrafico}" legendPosition="e"
+			title="PETR4" zoom="true" animate="true" />
 		<h:form id="listaNegociacao">
 
 			<p:dataTable var="negociacao" value="#{argentumBean.negociacoes}"
@@ -49,6 +41,7 @@
 
 			</p:dataTable>
 		</h:form>
+		<p:clock mode="server"/>
 	</p:panel>
 
 </h:body>
