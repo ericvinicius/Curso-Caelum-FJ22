@@ -10,6 +10,8 @@ import org.primefaces.model.chart.ChartModel;
 
 
 import br.com.caelum.argentum.grafico.GeradorModeloGrafico;
+import br.com.caelum.argentum.indicadores.Indicador;
+import br.com.caelum.argentum.indicadores.IndicadorFactory;
 import br.com.caelum.argentum.indicadores.IndicadorFechamento;
 import br.com.caelum.argentum.indicadores.MediaMovelSimples;
 import br.com.caelum.argentum.modelo.Candle;
@@ -71,7 +73,9 @@ public class ArgentumBean {
 		
 		GeradorModeloGrafico gerador = new GeradorModeloGrafico(serie, 2, serie.getTotal() -1);
 		
-		gerador.plotaIndicator(new MediaMovelSimples(new IndicadorFechamento()));
+		IndicadorFactory indicadorFactory = new IndicadorFactory(getNomeIndicador(), getNomeMedia());
+		
+		gerador.plotaIndicator(indicadorFactory.getIndicador());
 		
 		this.modeloGrafico = gerador.getModeloGrafico();
 	}
